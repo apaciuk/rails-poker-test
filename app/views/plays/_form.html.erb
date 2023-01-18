@@ -15,6 +15,10 @@
     <%= form.label :status, class: 'form-label' %>
       <%= form.text_field :status, class: 'form-control', placeholder: 'Stand or Draw?' %>
     </div>
+    <div class="mb-3">
+        <%= form.label :cards_to_discard %>
+        <%= form.text_field :cards_to_discard, class: 'form-control' %>
+    </div>
 
   <div class="mb-3">
     <% if play.persisted? %>

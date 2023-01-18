@@ -1,4 +1,23 @@
 <h1>New Poker Hand</h1>
+
 <p>Your dealt hand is:</p>
 
+<p>A hand</p>
+<p>Stand or Draw card?</p>
 <%= render 'form', play: @play %>
+<% @play.hands.each do |hand| %>
+    <p>
+    <% hand.cards.each do |card| %>
+        <%= card.face %><%= card.suit %>
+    <% end %>
+    </p>
+    <% end %>
+    <% @play.hands.each do |hand| %>
+    <p>
+    <% hand.cards.each_with_index do |card, index| %>
+        <%= index + 1 %>: <%= card.face %><%= card.suit %>
+    <% end %>
+    </p>
+    <% end %>
+   
+
