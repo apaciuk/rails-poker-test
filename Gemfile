@@ -64,8 +64,6 @@ group :development do
   # gem "spring"
 end
 
-
-# gem 'ruby-poker'
 gem "cssbundling-rails"
 gem "devise", "~> 4.8", ">= 4.8.0"
 gem "friendly_id", "~> 5.4"

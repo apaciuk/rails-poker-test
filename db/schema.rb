@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_18_113756) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_18_145033) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -62,12 +62,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_18_113756) do
   end
 
   create_table "cards", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "face", limit: 10, default: "A", null: false, comment: "Face of the card"
-    t.string "suit", limit: 10, default: "S", null: false, comment: "Suit of the card"
+    t.string "face", default: "", null: false
+    t.string "suit", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["face"], name: "index_cards_on_face"
-    t.index ["suit"], name: "index_cards_on_suit"
   end
 
   create_table "friendly_id_slugs", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -79,13 +77,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_18_113756) do
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
-  end
-
-  create_table "hands", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "cards", default: [], null: false, comment: "Cards in the hand", array: true
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["cards"], name: "index_hands_on_cards"
   end
 
   create_table "notifications", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -101,7 +92,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_18_113756) do
   end
 
   create_table "plays", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "status", limit: 10, default: "draw", null: false, comment: "Status of the play"
+    t.integer "status", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["status"], name: "index_plays_on_status"

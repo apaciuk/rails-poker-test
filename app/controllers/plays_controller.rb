@@ -12,7 +12,7 @@ class PlaysController < ApplicationController
 
   # GET /plays/new
   def new
-    @play = Play.new.play
+    @play = Play.new
   end
 
   # GET /plays/1/edit
@@ -65,6 +65,6 @@ class PlaysController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def play_params
-      params.require(:play).permit(:status, :cards, :hands, :game_over, :deck, :player_hand, :draw, :number_of_new_cards, :cards_to_discard, :count, :discard)
+      params.require(:play).permit(:status)
     end
 end

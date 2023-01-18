@@ -1,17 +1,15 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-  resources :cards
-  resources :hands
+  root to: 'plays#index'
   resources :plays
   get '/privacy', to: 'home#privacy'
   get '/terms', to: 'home#terms'
-  authenticate :user, lambda { |u| u.admin? } do
-  mount Sidekiq::Web => '/sidekiq'
+ authenticate :user, lambda { |u| u.admin? } do
+   mount Sidekiq::Web => '/sidekiq'
 end
 
   resources :notifications, only: [:index]
   resources :announcements, only: [:index]
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
-  root to: 'plays#index'
 end

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "plays/edit", type: :view do
   let(:play) {
     Play.create!(
-      status: "MyString"
+      status: 1
     )
   }
 

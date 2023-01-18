@@ -30,7 +30,7 @@ FactoryBot.define do
     access_token { "MyString" }
     access_token_secret { "MyString" }
     refresh_token { "MyString" }
-    expires_at { "2023-01-18 09:29:39" }
+    expires_at { "2023-01-18 13:07:28" }
     auth { "MyText" }
   end
 end

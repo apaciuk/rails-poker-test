@@ -21,6 +21,6 @@ FactoryBot.define do
     recipient { nil }
     type { "" }
     params { "" }
-    read_at { "2023-01-18 09:30:38" }
+    read_at { "2023-01-18 13:08:38" }
   end
 end

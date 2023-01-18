@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "plays/new", type: :view do
   before(:each) do
     assign(:play, Play.new(
-      status: "MyString"
+      status: 1
     ))
   end
 

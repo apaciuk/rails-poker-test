@@ -2,10 +2,10 @@
 #
 # Table name: plays
 #
-#  id                         :uuid             not null, primary key
-#  status(Status of the play) :string(10)       default("draw"), not null
-#  created_at                 :datetime         not null
-#  updated_at                 :datetime         not null
+#  id         :uuid             not null, primary key
+#  status     :integer          default("stand"), not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
 #
 # Indexes
 #
