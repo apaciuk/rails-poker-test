@@ -1,0 +1,14 @@
+<div class="page-header">
+  <%= link_to plays_path, class: 'btn btn-default' do %>
+    All Plays
+  <% end %>
+  <%= link_to edit_play_path(@play), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show play</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Status:</dt>
+  <dd><%= @play.status %></dd>
+</dl>
